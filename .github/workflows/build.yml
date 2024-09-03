@@ -64,7 +64,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Download base
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       # https://github.com/actions/runner-images/issues/6283
@@ -109,7 +109,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Download base
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       - name: Set up Python ${{ env.python_version }}
@@ -155,7 +155,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Download base
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       - name: Create buildconfig.py
@@ -202,7 +202,7 @@ jobs:
     if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
 
@@ -359,7 +359,7 @@ jobs:
           brew install rclone
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
 
@@ -404,7 +404,7 @@ jobs:
         python_version: ["3.10", "3.9", "3.8", "3.7"]
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       - name: Set up Python ${{ matrix.python_version }}
@@ -437,7 +437,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       - run: ls artifacts/
@@ -490,7 +490,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ytdl-artifacts
       - run: mv artifacts/ytdl-patched-${{ env.windows_icon }}.exe artifacts/ytdl-patched.exe
